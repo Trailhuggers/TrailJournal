@@ -5,11 +5,13 @@
 </head>
 <body>
 
-<header>Trailz</header>
+<header>
+  <%- include('./partials/header') %>
+</header>
 
 
 <main>
-  <h2>Find Trails</h2>
+  <h1>Find Trails</h1>
   <section id="searchCont">
     <form id="search-form" action="/location" method="post">
         <input class="trailsInput" type="text" name="search" placeholder="Enter a location" required>
