@@ -1,0 +1,9 @@
+<form id="<%= formAction %>-form" class="form-input" action="<%= 'update' === formAction ? `/trails/${result.id}` : 'add' %>" method="post">
+  <input type="hidden" name="_method" value="<%= 'update' === formAction ? 'put' : 'post' %>">
+    <input type="text" name="name" value="<%= result.name %>" required>
+    <input type="text" name="summary" value="<%= result.summary %>" required>
+    <input type="text" name="difficulty" value="<%= result.difficulty %>" required>
+    <input type="text" name="imageURL" value="<%= result.img_small %>" required>
+    <input type="text" name="length" value="<%= result.length %>" required>
+    <button type="submit" class="add-button detail-button">Update Book</button>
+</form>

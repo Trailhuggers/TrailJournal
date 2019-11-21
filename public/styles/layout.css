@@ -1,0 +1,67 @@
+
+/* HEADER / FOOTER  */
+#titleHeader {
+  font-size: 3em;
+  font-family: monospace;
+  padding-top: 20px;
+  padding-left: 20px;
+  }
+
+
+  /* Map and Aside Structure */
+
+#main-container {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 1fr;
+}
+
+  #results-container {
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 100%;
+  }
+
+  #map-container {
+    width: 70%;
+    height: 300px;
+    margin: 50px 0px;
+  }
+
+  #map-container img {
+    width: 100%;
+    margin-left: 40px;
+  }
+
+  /* TERRACOTTA #945D60
+HERB #626E60
+CHILLI #AF473C
+CHARCHOAL #3C3C3C */
+  #favorites-body {
+background-color:#945D60;
+  }
+
+  #title {
+    background-color: #626E60;
+    font-size: 3em;
+    text-align: center;
+  }
+
+  #favorites-container {
+    width: 100%;
+    padding: 1%;
+    background-color: #3C3C3C;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .trails {
+    width: 50%;
+    color: #3C3C3C;
+    border: 1%;
+    margin: 5px;
+  }
+
+  .detail-button .select-button {
+    background-color:  rgb(17, 150, 17);
+  }

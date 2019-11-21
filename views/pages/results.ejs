@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head') %>
+</head>
+<body>
+  <header>
+    <%- include('../partials/header') %>
+  </header>
+  <main id="main-container">
+
+
+      
+    <aside id="results-container">
+          <% data.list.forEach(item => { %>
+              <div class="trails">
+              <img src="<%= item.imgURL %>" height="150" width="250" alt="image related to this trail or campground"/>
+              <h2><%= item.name %></h2>
+              <p><%= item.summary %></p>
+              <p><%= item.length %> miles</p>
+              <p>Difficulty: <%= item.difficulty.charAt(0).toUpperCase() + item.difficulty.slice(1) %></p>
+
+
+              
+              <button class="detail-button select-button" type="submit">Select This Trail</button>
+              
+              
+            
+
+            <section class="hide-me hidden-form">
+            <form action="/trails" method="post" class="form-container">
+            <input type='text' name='object' value='<%= JSON.stringify(item) %>' hidden='true'>
+            <button type="submit" class="detail-button add-button">Add to Favorites</button>
+        </form>
+      </section>
+    </div>
+            <% }) %>
+    </aside>
+
+    <div id="map-container">
+        <img src="<%= data.staticMapURL %>" alt="Map of the returned items from the search">
+    </div>
+
+  </main>
+
+  <footer>
+    <%- include('../partials/footer') %>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="../../public/js/app.js"></script>
+</body>
+</html>

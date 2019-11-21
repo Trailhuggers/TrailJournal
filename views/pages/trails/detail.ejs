@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include('../../partials/head') %>
+</head>
+<body>
+
+  <header>
+    <%- include('../../partials/header') %>
+  </header>
+
+  <main class="detail-container">
+    <section id="result-container">
+      <div id="trail-detail">
+      <img src="<%= result.img_small %>" alt="">
+      <h2><%= result.name %></h2>
+      <p><%= result.summary %></p>
+      <p>Difficulty: <%= result.difficulty %></p>
+      <p><%= result.length %> miles</p>
+        <div class="update-details">
+          <button class="btn-update"><a href="">Update Details</a></button>
+
+          <form action="/trails/<%= result.id %>" method="post">
+            <input type="hidden" name="_method" value="delete">
+           <button class="update-btn"><a href="">Delete Book</a></button>
+          </form>
+        </div>
+    </div>
+    </section>
+  </main>
+
+  <section class="hide-me form-container" id="hidden-form">
+      <%- include('./form', { formAction: 'update', result: result}) %>
+    </section>
+
+    <div id="button-wrapper">
+        <button class="detail-button"><a href="/">Home Page</a></button>
+    </div>
+
+
+    <footer>
+      <%- include('../../partials/footer') %>
+    </footer>
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="../../../public/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Favorites</title>
+  <link rel="stylesheet" href="../../../public/styles/base.css">
+</head>
+<body id="favorites-body">
+  <header>
+    <%- include('../partials/header') %>
+  </header>
+  <main>
+
+    <h2 id="title">
+      <span id="count"><%= trails.length %></span>
+       Favorite Trails
+    </h2>
+
+    <section id="favorites-container">
+      <% trails.forEach(item => { %>
+        <div class="trails">
+          <img src="<%= item.img_small%>" alt="Picture of a trail">
+          <h2><%= item.name %></h2>
+          <p><%= item.summary %></p>
+          <p>Difficulty: <%= item.difficulty %></p>
+          <p><%= item.length %> miles</p>
+          // <button class="detail-button select-button" type="submit" onclick="location.href = '/trails/<%= item.id %>'">View Details</button>
+        </div>
+    <%  }); %>
+    </section>
+
+
+
+  </main>
+  <footer>
+    <%- include('../partials/footer') %>
+  </footer>
+</body>
+</html>

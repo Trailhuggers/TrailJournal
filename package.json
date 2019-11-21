@@ -1,0 +1,31 @@
+{
+  "name": "TrailJournal",
+  "version": "1.0.0",
+  "description": "The web application solves this problem by linking information from the All Trails API by location to provide a list of trail options with related information such as hike difficulty and trail conditions. The user will be able to save hikes for later retrieval. An image of the trail will be displayed with an option to get further detailed information.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TrevorThomp/TrailJournal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TrevorThomp/TrailJournal/issues"
+  },
+  "homepage": "https://github.com/TrevorThomp/TrailJournal#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^2.7.4",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "path": "^0.12.7",
+    "pg": "^7.13.0",
+    "superagent": "^5.1.0"
+  }
+}
