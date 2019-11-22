@@ -185,6 +185,7 @@ img.trail-item{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: #3C3C3C;
 }
 
 .about-container {
