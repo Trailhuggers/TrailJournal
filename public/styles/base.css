@@ -1,86 +1,49 @@
 @import url('./reset.css');
-@import url('./layout.css');
 @import url('./module.css');
+@import url('./layout.css');
 @import url('./state.css');
 
-html {
-  padding-bottom: 80px;
+html{
+  height:100%;
 }
 
-h1 {
-  font-size: 34px;
+header{
+  height: 20%;
+  max-height: 150px;
+  background-color: #626E60;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 20px;
 }
 
-/* NAV MENU */
-
-body {
-  margin: 0;
-  padding: 0;
-  color: #222222;
-  font-family: "Avenir Next", "Avenir", sans-serif;
-  /* margin-bottom: 1000px;  */
+footer{
+  height: 15%;
+  background-color: #626E60;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Staatliches', cursive;
+  color: antiquewhite;
 }
 
 a {
   text-decoration: none;
-  color: #232323;
-  transition: color 0.3s ease;
 }
 
-header {
-  background-color: #d3e5ff;
-  width: 100%;
-  height: 75px;
-  top: 0;
-  box-shadow: 0px 0px 6px 0px #444;
-  grid-area: header;
+footer a{
+  color: antiquewhite;
 }
-
-header div {
-  height: 10vw;
-}
-  
-  form {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    height: 30px;
-    border-radius: 25px;
-  }
-  
-  input {
-    border-radius: 25px;
-  
-  }
-  
-  button {
-    background: #ef3f5a;
-    border: 1px solid #ef3f5a;
-    color: #fff;
-    padding: 0 30px;
-    cursor: pointer;
-    -webkit-transition: all 0.2s;
-    -moz-transition: all 0.2s;
-    transition: all 0.2s;
-    border-radius: 25px;
-    
-  }
-  
-  button:hover {
-    background: #d73851;
-    border: 1px solid #d73851;
-  }
-  
-
-footer {
-  background-color: rgb(56, 56, 56);
-  height: 75px;
-  width: 100%;
+button {
+  background: #AF473C;
+  border: 1px solid #AF473C;
   color: #fff;
-  margin-top: 50px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  color: white;
+  padding: 0 5%;
+  border-radius: 25px;
 }
 
+button:active {
+  border: 20% solid #fff;
+} 

@@ -24,7 +24,6 @@ client.on('err', err => console.error(err));
 // Middleware to handle PUT and DELETE
 app.use(methodOverride((request, response) => {
   if (request.body && typeof request.body === 'object' && '_method' in request.body) {
-    // look in urlencoded POST bodies and delete it
     let method = request.body._method;
     delete request.body._method;
     return method;
@@ -53,7 +52,7 @@ function Trail(data) {
   this.name = data.name ? data.name : 'No name available';
   this.summary = data.summary ? data.summary : 'No summary available';
   this.trail_id = data.id;
-  this.difficulty = data.difficulty ? data.difficulty : 'No difficulty available';
+  this.difficulty = data.difficulty === 'green' || data.difficulty === 'greenBlue' ? 'Easy' : data.difficulty === 'blue' ? 'Intermediate' : data.difficulty === 'blueBlack' ? 'Hard' : 'Expert';
   this.stars = data.stars ? data.stars : '';
   this.imgURL = data.imgSmallMed ? data.imgSmallMed.replace(httpRegex, 'https://') : placeholder;
   this.latitude = data.latitude;
@@ -74,20 +73,6 @@ function Location(query, data) {
   this.search_query = query;
   this.latitude = data.geometry.location.lat;
   this.longitude = data.geometry.location.lng;
-}
-
-Location.lookup = (handler) => {
-  const SQL = 'SELECT * FROM locations WHERE search_query=$1';
-  const values = [handler.query];
-  return client.query(SQL, values)
-    .then( results => {
-      if (results.rowCount > 0){
-        handler.cacheHit(results);
-      }else {
-        handler.cacheMiss();
-      }
-    })
-    .catch(console.error);
 }
 
 // Campground Constructor
@@ -130,15 +115,10 @@ function getLocation(req,res){
   const everythingYouCouldEverWant = {};
   return superagent.get(geocodeUrl)
     .then( result => {
-      // TODO: change placement of location.save for async purposes | make helper function instead of object attached? | refactor resource middleware to be object oriented
       return new Location(req.query.data, result.body.results[0]);
     })
     .then( location => {
       everythingYouCouldEverWant.location = location;
-      // console.log(everythingYouCouldEverWant.location)
-      // https://stackoverflow.com/questions/2657433/replace-space-with-dash-javascript/2657438
-      // console.log(location.search_query.replace(/\s/g , "-"));
-      //TODO: The search query could be written to the database using this replace to store the query necessary for the embedded google map.
       return makeList(location.latitude, location.longitude, req.query.maxMiles, req.query.endpoint);
     })
     .then( list => {
@@ -175,12 +155,6 @@ function getOneTrail(request,response) {
   return client.query(SQL, values)
     .then(result => response.render('pages/trails/detail', {result: result.rows[0]}))
     .catch(err => console.err(err))
-}
-
-function embedOneTrail(){
-  let embedURL = `https://www.google.com/maps/embed/v1/place?key=AIzaSyB1mbQHleVvGLhxIg8zRtwHDk6d_OgzXk4&q=${q}`
-  let q = 'Bend+Oregon';
-//get search query for assignment to q.  Determine where to invoke embedOneTrail - detail page.
 }
 
 // Updates Trail information in database

@@ -47,6 +47,11 @@ NPM Install:
 - express
 - methodOverride
 
+## Attributions
+
+Hamburger Menu:
+https://codepen.io/erikterwan/pen/grOZxx
+
 ## API Sample Responses:
 ```
 

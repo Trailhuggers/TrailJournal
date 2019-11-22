@@ -1,136 +1,109 @@
-/* SEARCH FORM */
-#titleHeader {
+/* Header */
+#titleHeader{
+  font-size: 3em;
+  font-family: 'Staatliches', cursive;
+  color: antiquewhite;
+  width: 40%;
+  height: 50%;
+  padding-top: 20px;
+}
+
+#mountain-icon{
+  background-color: antiquewhite;
+  width: 20%;
+  height: 50%;
+}
+
+#nav-bar{
+  width: 100%;
+  height: 10%;
+}
+
+#nav-menu{
+  width: 100%;
   display: flex;
-  align-items: flex-start;
-  
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  padding: 20px;
 }
 
-/* NAV MENU */
-#menuToggle {
-   display: block;
-   position: absolute;
-   top: 32px;
-   right: 50px;
-   z-index: 1;
-   -webkit-user-select: none;
-   user-select: none;
- }
- 
- #menuToggle input {
-   display: block;
-   width: 40px;
-   height: 32px;
-   position: absolute;
-   top: -7px;
-   left: -5px;
-   cursor: pointer;
-   opacity: 0; /* hide this */
-   z-index: 2; /* and place it over the hamburger */
-   -webkit-touch-callout: none;
- }
- 
- #menuToggle span {
-   display: block;
-   width: 33px;
-   height: 4px;
-   margin-bottom: 5px;
-   position: relative;
-   background: #232323;
-   border-radius: 3px;
-   z-index: 1;
-   transform-origin: 4px 0px;
-   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-               opacity 0.55s ease;
- }
- 
- #menuToggle span:first-child {
-   transform-origin: 0% 0%;
- }
- 
- #menuToggle span:nth-last-child(2){
-   transform-origin: 0% 100%;
- }
- /* 
-  * Transform all the slices of hamburger
-  * into a crossmark.
-  */
- #menuToggle input:checked ~ span {
-   opacity: 1;
-   transform: rotate(45deg) translate(-2px, -1px);
-   background: #232323;
- }
- 
- /*
-  * But let's hide the middle one.
-  */
- #menuToggle input:checked ~ span:nth-last-child(3) {
-   opacity: 0;
-   transform: rotate(0deg) scale(0.2, 0.2);
- }
- 
- /*
-  * Ohyeah and the last one should go the other direction
-  */
- #menuToggle input:checked ~ span:nth-last-child(2) {
-   opacity: 1;
-   transform: rotate(-45deg) translate(0, -1px);
- }
- /*
-  * Make this absolute positioned
-  * at the top left of the screen
-  */
- #menu {
-   position: absolute;
-   width: 300px;
-   margin: -100px 0 0 0;
-   padding: 50px;
-   padding-top: 125px;
-   right: -200px;
-   background: #ededed;
-   list-style-type: none;
-   -webkit-font-smoothing: antialiased;
-   /* to stop flickering of text in safari */
-   transform-origin: 0% 0%;
-   transform: translate(100%, 0);
-   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
- }
- 
- #menu li {
-   padding: 10px 0;
-   font-size: 22px;
- }
- 
- #menuToggle input:checked ~ ul
- {
-   transform: scale(1.0, 1.0);
-   opacity: 1;
- }
-
- .trails {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
-   background-color: antiquewhite;
-   width: 20%;
-   margin-bottom: 20px;
-   padding: 10px;
-   border-radius: 10px;
- }
-
-.trails img {
-  margin-bottom: 15px;
-  width: 30%;
+#nav-menu a{
+  color: antiquewhite;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  text-shadow: 0.06em 0.1em 0.1em hsla(34, 78%, 70%, 1);
 }
 
-.trails h2 {
-  margin-bottom: 10px;
-  font-weight: bold;
+#nav-menu a:active{
+  color: #C69543;
+  border-bottom: 1px ridge #C69543;
+  background-color: hsla(38, 53%, 52%, 0.4);
+  transition: all 0.5s ease;
 }
 
-.trails p {
-  margin: 5px 0;
+/* SEARCH FORM */
+.search-form-inputs{
+  padding: 3% 0;
+  margin: 0 1%;
+}
+
+#form-title{
+  font-size: 2em;
+  padding: 5% 0;
+  margin-bottom: 14%;
+  color: antiquewhite;
+  width: 100%;
+  background-color: rgb(51, 51, 51);
+  margin-top: 30px;
+}
+
+#search-form{
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+#search-form-select{
+  width: 40%;
+  font-size: 0.9em;
+}
+
+#input-search{
+  width: 35%;
+}
+
+#input-number{
+  width: 11%;
+}
+
+#button-submit{
+  font-size: 2em;
+  margin-top: 5%;
+  color: antiquewhite;
+}
+
+#button-submit:hover {
+  cursor: pointer;
+}
+
+/* Footer */
+
+#github-link{
+  font-size: 3em;
+  width: 40%;
+  text-align: center;
+}
+
+#send{
+  text-align: center;
+  width: 40%;
+  font-size: 3em;
+}
+
+/* Result Cards */
+img.trail-item{
+  width: auto;
 }
 
 /* Hidden Form */
@@ -143,53 +116,75 @@
 }
 
 .detail-button {
-  padding: 15px;
-  margin-bottom: 15px;
-  width: 50%;
+  padding: 5%;
+  margin-bottom: 5%;
+  font-size: 1em;
+  font-family: 'Rammetto One', cursive;
+  box-shadow: 0.2em 0.2em hsla(6, 49%, 24%, 0.9);
+  color: antiquewhite;
 }
 
-.form-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.detail-button:hover {
+  cursor: pointer;
 }
 
-.form-input {
-  width: 50%;
+.detail-button > a{
+  color: antiquewhite;
 }
 
-.form-container input{
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 15px;
+#detail-container {
+  width: 100vw;
+  padding: 30px 0;
+  background-color: #3c3c3c;
+  color: antiquewhite;
+  font-family: Staatliches, cursive;
 }
 
 #view-detail-button {
   padding: 10px;
 }
 
-.detail-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
 #trail-detail {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-  background-color: white;
+  height: 100%;
+  text-align: center;
+  padding: 0 5%;
+  font-size: 1.2em;
+  color:  antiquewhite;
+  border: 5px solid  #945D60;
+  border-radius: 10%;
+  background-color: #626E60;
+  font-family: 'Staatliches', cursive;
+  font-size: 1.3em;
+  line-height: 1.4em;
 }
 
-.main-container {
+#trail-detail img {
+  padding: 15px;
+}
+
+#trail-detail h2 {
+  margin-bottom: 10px;
+  font-size: 1.3em;
+}
+
+#trail-detail p {
+  margin: 10px;
+}
+
+#detail-image{
+  width: 40%;
+  height: auto;
+}
+/* About Us Styling */
+.abt-main-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 50px;
 }
 
 .about-container {
@@ -234,6 +229,8 @@
   backface-visibility: hidden;
   overflow: hidden;
   color: #000;
+  background-color: #626E60;
+  color: antiquewhite;
 }
 
 .front h2 {
@@ -254,6 +251,8 @@
   color: #333;
   text-align: center;
   transform: rotateY(180deg);
+  background-color: #626E60;
+  color: antiquewhite;
 }
 
 .back-content {
@@ -269,6 +268,8 @@
   line-height: 1em;
 }
 
+
+/* Social Media Icons and FA Icons */
 .social-container {
   display: flex;
   justify-content: flex-start;
@@ -290,11 +291,12 @@
   -webkit-transition:.5s;
   transition: .5s;
   background-color: inherit;
+  color: antiquewhite;
 }
 
 .fa-github:hover {
   color: white;
-  background-color: #3d5b99;
+  background-color: black;
 }
 
 .fa-envelope {
@@ -305,11 +307,12 @@
   -webkit-transition:.5s;
   transition: .5s;
   background-color: inherit;
+  color: antiquewhite;
 }
 
 .fa-envelope:hover {
   color: white;
-  background-color: #3d5b99;
+  background-color: red
 }
 
 .fa-linkedin {
@@ -320,9 +323,18 @@
   -webkit-transition:.5s;
   transition: .5s;
   background-color: inherit;
+  color: antiquewhite;
 }
 
 .fa-linkedin:hover {
   color: white;
   background-color: #3d5b99;
+}
+
+/* Update Form */
+
+#update-form input {
+  padding: 20px;
+  width: 70%;
+  margin-bottom: 20px;
 }

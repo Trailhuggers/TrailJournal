@@ -1,8 +1,22 @@
 /* Media Query Updating */
 @media (min-width: 768px) {
-  .main-container {
+
+  body {
+    /* padding-bottom: 60px; */
+    height: 95vh;
+  }
+
+  #index-main {
+    height: 100%;
+  }
+
+  /* About Us Page */
+  .abt-main-container {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
   }
 
   .about-container {
@@ -12,5 +26,87 @@
   .front img {
     width: 30%;
     border-radius: 20%;
+  }
+
+  /* Header */
+
+  header {
+    height: 10%;
+  }
+
+  #mountain-icon {
+    width: 5%;
+    margin-left: 15px;
+  }
+
+  #titleHeader {
+    padding-top: 5px;
+    margin-left: 20px;
+  }
+
+  #nav-menu a {
+    font-size: 1.3em;
+  }
+
+
+  /* Index Page */
+
+  #form-title {
+    padding: 20px;
+    margin-bottom: 50px;
+    /* margin-top: 50px; */
+  }
+
+  /* Favorites Container */
+
+  #favorites-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .fav-trails {
+    width: 25%;
+    margin-bottom: 30px;
+  }
+
+  #results-main {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 1fr;
+    grid-template-areas: 'aside map'
+    ;
+  }
+
+  #results-container {
+    margin: 30px;
+  }
+
+  #map {
+    width: 60%;
+    margin-left: 100px;
+    margin: 70px;
+    padding-left: 150px;
+  }
+
+  /* Detail Display */
+
+  #trail-detail {
+    width: 30%;
+  }
+
+  #trail-detail img {
+    width: 30%;
+  }
+
+  .detail-button {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  #detail-container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
   }
 }

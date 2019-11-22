@@ -1,67 +1,94 @@
-
-/* HEADER / FOOTER  */
-#titleHeader {
-  font-size: 3em;
-  font-family: monospace;
-  padding-top: 20px;
-  padding-left: 20px;
-  }
-
-
-  /* Map and Aside Structure */
-
-#main-container {
-  display: grid;
-  grid-template-columns: 40% 60%;
-  grid-template-rows: 1fr;
+/* Index Page Layout */
+#index-main{
+  text-align: center;
+  height: 100%;
+  background-image: url(../assets/steve-halama-jMlgFOiJLXc-unsplash.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
-  #results-container {
-    margin-top: 20px;
-    margin-left: 20px;
-    width: 100%;
-  }
+#index-body{
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
+}
 
-  #map-container {
-    width: 70%;
-    height: 300px;
-    margin: 50px 0px;
-  }
+/* Results Page Layout */
+#results-body, #favorites-body, #details-body{
+  width: 100vw;
+  height: 100%;
+}
 
-  #map-container img {
-    width: 100%;
-    margin-left: 40px;
-  }
+#results-main, #favorites-main{
+  background-color: #3C3C3C;
+  width: 100%;
+}
 
-  /* TERRACOTTA #945D60
-HERB #626E60
-CHILLI #AF473C
-CHARCHOAL #3C3C3C */
-  #favorites-body {
-background-color:#945D60;
-  }
+#map{
+  width: 80%;
+  height: auto;
+  margin: 10% 10%;
+  grid-area: map;
+}
 
-  #title {
-    background-color: #626E60;
-    font-size: 3em;
-    text-align: center;
-  }
+#results-container{
+  min-height: 60%;
+  width: 100%;
+  display: flex;
+  flex-flow:row wrap;
+  grid-area: aside;
+}
 
-  #favorites-container {
-    width: 100%;
-    padding: 1%;
-    background-color: #3C3C3C;
-    display: flex;
-    flex-wrap: wrap;
-  }
+.trails {
+  width: 95%;
+  margin: 0 2.5%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  color:  antiquewhite;
+  margin-bottom: 10%;
+  border: 5px solid  #945D60;
+  border-radius: 10%;
+  background-color: #626E60;
+  font-family: 'Staatliches', cursive;
+  font-size: 1.3em;
+  line-height: 1.4em;
+}
+
+.trails p{
+  max-width: 90%;
+}
+
+.trails img{
+  margin-top: 3%;
+  border-radius: 10%;
+  max-height: 100px;
+}
+
+.trail-item{
+  margin-bottom: 3%;
+}
+
+/* Favorites Layout */
+#favorites-title{
+  background-color:#945D60;
+  text-align: center;
+  font-size: 2em;
+  color: antiquewhite;
+  padding: 1% 0;
+  font-family: 'Staatliches', cursive;
+}
+
+
+#favorites-container {
+  width: 100%;
+  padding: 1%;
+  background-color: #3C3C3C;
+  display: flex;
+  flex-wrap: wrap;
+}
   
-  .trails {
-    width: 50%;
-    color: #3C3C3C;
-    border: 1%;
-    margin: 5px;
-  }
 
-  .detail-button .select-button {
-    background-color:  rgb(17, 150, 17);
-  }
