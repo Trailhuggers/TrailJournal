@@ -160,7 +160,7 @@ function deleteTrail(request,response){
   let value = [request.params.id];
 
   return client.query(SQL, value)
-    .then(response.redirect('/'))
+    .then(response.redirect('/favorites'))
     .catch(err => handleError(err, response));
 }
 
