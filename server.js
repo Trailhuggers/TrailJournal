@@ -54,7 +54,7 @@ function Trail(data) {
   this.trail_id = data.id;
   this.difficulty = data.difficulty === 'green' || data.difficulty === 'greenBlue' ? 'Easy' : data.difficulty === 'blue' ? 'Intermediate' : data.difficulty === 'blueBlack' ? 'Hard' : 'Expert';
   this.stars = data.stars ? data.stars : '';
-  this.imgURL = data.imgSmallMed ? data.imgSmallMed.replace(httpRegex, 'https://') : placeholder;
+  this.imgURL = data.imgSmallMed ? data.imgSmallMed.replace(httpRegex, 'https://') : data.imgURL ? data.imgURL : placeholder;
   this.latitude = data.latitude;
   this.longitude = data.longitude;
   this.length = data.length ? data.length : 'No length available';
@@ -75,26 +75,12 @@ function Location(query, data) {
   this.longitude = data.geometry.location.lng;
 }
 
-// Campground Constructor
-function Campground(data){
-  this.id = data.id;
-  this.name = data.name;
-  this.isBookable = data.isBookable;
-  this.location = data.location;
-  this.latitude = data.latitude;
-  this.longitude = data.longitude;
-  this.url = data.url;
-  this.imgUrl = data.imgUrl;
-  this.numCampsites = data.numCampsites;
-}
-
 // Hiking Project API Pull
-function makeList(latitude,longitude,maxDistance,endpoint){
-  const hikeURL = `https://www.hikingproject.com/data/${endpoint}?lat=${latitude}&lon=${longitude}&maxDistance=${maxDistance}&maxResults=10&key=${process.env.HIKING_PROJECT_API_KEY}`;
+function makeList(latitude,longitude,maxDistance){
+  const hikeURL = `https://www.hikingproject.com/data/get-trails?lat=${latitude}&lon=${longitude}&maxDistance=${maxDistance}&maxResults=10&key=${process.env.HIKING_PROJECT_API_KEY}`;
   return superagent.get(hikeURL)
     .then( hikeAPICallResult => {
-      if(endpoint === 'get-trails') return hikeAPICallResult.body.trails.map(trailObject => new Trail(trailObject));
-      else return hikeAPICallResult.body.campgrounds.map(campgroundObject => new Campground(campgroundObject));
+      return hikeAPICallResult.body.trails.map(trailObject => new Trail(trailObject));
     })
     .catch(err => console.error(err));
 }
@@ -119,7 +105,7 @@ function getLocation(req,res){
     })
     .then( location => {
       everythingYouCouldEverWant.location = location;
-      return makeList(location.latitude, location.longitude, req.query.maxMiles, req.query.endpoint);
+      return makeList(location.latitude, location.longitude, req.query.maxMiles);
     })
     .then( list => {
       everythingYouCouldEverWant.list = list;

@@ -6,6 +6,10 @@
     height: 95vh;
   }
 
+  footer {
+    padding-bottom: 20px;
+  }
+
   #index-main {
     height: 100%;
   }
@@ -53,8 +57,10 @@
 
   #form-title {
     padding: 20px;
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 50px;
     margin-bottom: 50px;
-    /* margin-top: 50px; */
   }
 
   /* Favorites Container */
@@ -108,5 +114,10 @@
    flex-direction: column;
    justify-content: center;
    align-items: center;
+  }
+
+  .search-form-inputs {
+    width: 35%;
+    margin: 20px;
   }
 }
