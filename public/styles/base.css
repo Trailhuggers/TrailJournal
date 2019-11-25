@@ -3,11 +3,11 @@
 @import url('./layout.css');
 @import url('./state.css');
 
-html{
+html {
   height:100%;
 }
 
-header{
+header {
   height: 20%;
   max-height: 150px;
   background-color: #626E60;
@@ -18,7 +18,7 @@ header{
   padding-bottom: 20px;
 }
 
-footer{
+footer {
   height: 15%;
   background-color: #626E60;
   display: flex;
@@ -33,7 +33,7 @@ a {
   text-decoration: none;
 }
 
-footer a{
+footer a {
   color: antiquewhite;
 }
 button {

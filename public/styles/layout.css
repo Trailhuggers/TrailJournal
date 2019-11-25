@@ -1,5 +1,5 @@
 /* Index Page Layout */
-#index-main{
+#index-main {
   text-align: center;
   height: 100%;
   background-image: url(../assets/steve-halama-jMlgFOiJLXc-unsplash.jpg);
@@ -7,7 +7,7 @@
   background-repeat: no-repeat;
 }
 
-#index-body{
+#index-body {
   box-sizing: border-box;
   display: flex;
   flex-flow: column nowrap;
@@ -15,24 +15,24 @@
 }
 
 /* Results Page Layout */
-#results-body, #favorites-body, #details-body{
+#results-body, #favorites-body, #details-body {
   width: 100vw;
   height: 100%;
 }
 
-#results-main, #favorites-main{
+#results-main, #favorites-main {
   background-color: #3C3C3C;
   width: 100%;
 }
 
-#map{
+#map {
   width: 80%;
   height: auto;
   margin: 10% 10%;
   grid-area: map;
 }
 
-#results-container{
+#results-container {
   min-height: 60%;
   width: 100%;
   display: flex;
@@ -40,40 +40,8 @@
   grid-area: aside;
 }
 
-.trails {
-  width: 95%;
-  margin: 0 2.5%;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  color:  antiquewhite;
-  margin-bottom: 10%;
-  border: 5px solid  #945D60;
-  border-radius: 10%;
-  background-color: #626E60;
-  font-family: 'Staatliches', cursive;
-  font-size: 1.3em;
-  line-height: 1.4em;
-}
-
-.trails p{
-  max-width: 90%;
-}
-
-.trails img{
-  margin-top: 3%;
-  border-radius: 10%;
-  max-height: 100px;
-}
-
-.trail-item{
-  margin-bottom: 3%;
-}
-
 /* Favorites Layout */
-#favorites-title{
+#favorites-title {
   background-color:#945D60;
   text-align: center;
   font-size: 2em;
@@ -90,5 +58,3 @@
   display: flex;
   flex-wrap: wrap;
 }
-  
-

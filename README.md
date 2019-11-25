@@ -13,7 +13,7 @@ Create an application that allows users to search local trails and save them for
 - Conor McCue
 - Trevor Thompson
 
-**Version**: 1.0.0 (Project Pitch)
+## Version: 1.8.0 
 
 ## Required Assets
 
@@ -46,11 +46,15 @@ NPM Install:
 - pg
 - express
 - methodOverride
+- cors
+- path
 
-## Attributions
+ENV Setup:
 
-Hamburger Menu:
-https://codepen.io/erikterwan/pen/grOZxx
+* PORT = ___
+* DATABASE_URL = ___
+* GEOCODE_API_KEY = ____
+* HIKING_PROJECT_API_KEY = ___
 
 ## API Sample Responses:
 ```
@@ -161,4 +165,24 @@ Example:
 "conditionDetails": "",
 "conditionDate": "2019-08-10 16:37:58"
 }
+```
+## Database Schema
+
+```
+DROP TABLE IF EXISTS trail;
+
+CREATE TABLE trail (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  summary VARCHAR(255),
+  trail_id INT,
+  difficulty VARCHAR(255),
+  stars DECIMAL(3,1),
+  img_small VARCHAR(255),
+  latitude  DECIMAL (12,7),
+  longitude DECIMAL (12,7),
+  length DECIMAL(4,1),
+  conditionstatus TEXT,
+  conditiondetails TEXT
+);
 ```
